@@ -52,5 +52,6 @@
         "streambuf": "cpp",
         "typeinfo": "cpp",
         "fstream": "cpp"
-    }
+    },
+    "files.encoding": "utf8"
 }
