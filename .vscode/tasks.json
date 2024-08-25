@@ -18,6 +18,8 @@
                 "-fexec-charset=GBK",
                 "-I",
                 "${workspaceFolder}/head",
+                "-l",
+                "wsock32",
                 ""
             ],
             "options": {
