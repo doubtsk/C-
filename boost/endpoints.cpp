@@ -97,6 +97,7 @@ int connect_to_end()
 
         return e.code().value();
     }
+    return 0;
 }
 
 int dns_connect_to_end()
@@ -119,6 +120,7 @@ int dns_connect_to_end()
 
         return e.code().value();
     }
+    return 0;
 }
 
 int acceptor_new_connection()
@@ -142,6 +144,7 @@ int acceptor_new_connection()
 
         return e.code().value();
     }
+    return 0;
 }
 /*
 以下均为构造buffer
