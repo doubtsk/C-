@@ -139,4 +139,93 @@ public:
         return maxprofit;
     }
 };
+/*给你一个整数数组 prices ，其中 prices[i] 表示某支股票第 i 天的价格。
+在每一天，你可以决定是否购买和/或出售股票。你在任何时候 最多 只能持有 一股 股票。你也可以先购买，然后在 同一天 出售。
+返回 你能获得的 最大 利润 。*/
+class Solution
+{
+public:
+    int maxProfit(vector<int> &prices)
+    {
+        int maxpro = 0;
+        for (int i = 0; i < prices.size() - 1; i++)
+        {
+            if (prices[i] < prices[i + 1])
+            {
+                maxpro += prices[i + 1] - prices[i];
+            }
+        }
+        return maxpro;
+    }
+};
 
+/*给你一个非负整数数组 nums ，你最初位于数组的 第一个下标 。数组中的每个元素代表你在该位置可以跳跃的最大长度。
+判断你是否能够到达最后一个下标，如果可以，返回 true ；否则，返回 false 。*/
+class Solution
+{
+public:
+    bool canjump(vector<int> &nums)
+    {
+        if (nums.size() == 1)
+        {
+            return true;
+        }
+        int len = 1;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            len = max(len - 1, nums[i]);
+            if (len == 0)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+};
+
+/*给定一个长度为 n 的 0 索引整数数组 nums。初始位置为 nums[0]。
+每个元素 nums[i] 表示从索引 i 向前跳转的最大长度。换句话说，如果你在 nums[i] 处，你可以跳转到任意 nums[i + j] 处:
+0 <= j <= nums[i]
+i + j < n
+返回到达 nums[n - 1] 的最小跳跃次数。生成的测试用例可以到达 nums[n - 1]。*/
+class Solution
+{
+public:
+    int jump(vector<int> &nums, int state, int n)
+    {
+        
+    }
+};
+
+/*经典上楼梯例题
+给定一个数组为n的楼梯，每一次可选择上1层楼梯或2层楼梯，共有多少种方法？*/
+class Solution
+{
+public:
+    int staircase(vector<int> choices, int state, int n, vector<int> res)
+    {
+        if (state == n)
+        {
+            res[0]++;
+        }
+
+        for (auto &choice : choices)
+        {
+            if (state + choice > n)
+            {
+                continue;
+            }
+
+            staircase(choices, state + choice, n, res);
+        }
+    }
+
+    int climbstaircase(int n)
+    {
+        vector<int> choices = {1, 2};
+        int state = 0;
+        vector<int> res = {0};
+        staircase(choices, state, n, res);
+        return res[0];
+    }
+};
