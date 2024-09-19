@@ -5,3 +5,6 @@ draft/*
 *.png
 *.vscode
 draft.cpp
+settings.json
+launch.json
+c_cpp_properties.json

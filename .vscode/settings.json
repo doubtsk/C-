@@ -70,7 +70,8 @@
         "shared_mutex": "cpp",
         "cinttypes": "cpp",
         "typeindex": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "*.ipp": "cpp"
     },
     "files.encoding": "utf8"
 }
